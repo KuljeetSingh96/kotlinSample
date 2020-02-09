@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="MovieListItemBinding">
+
+        <variable
+            name="viewModel"
+            type="com.hooq.ui.MovieItemListViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/parent_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_150"
+        android:layout_margin="5dp"
+        android:background="@android:color/white"
+        tools:ignore="MissingPrefix">
+
+        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            card_view:cardCornerRadius="4dp">
+
+            <ImageView
+                android:id="@+id/movie_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop"
+                app:movieAvatarUrl="@{viewModel.movieImageUrl}" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</layout>
